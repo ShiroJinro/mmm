@@ -1,0 +1,13 @@
+<ons-page ng-controller="SetPlayerCtrl as playerCl">
+    <ons-toolbar>
+      <div class="center">プレイヤー設定</div>
+    </ons-toolbar>
+
+    <div class="content" style="margin: 10px;">
+      <div ng-repeat="player in playerCl.players">
+        {{$index + 1}} : {{player}} <ons-button ng-click="playerCl.changeName(player,$index)">名前変更</ons-button>
+        <br>
+      </div>
+      <ons-button ng-click="playerCl.backTop()">結果一覧画面へ</ons-button>
+    </div>
+</ons-page>

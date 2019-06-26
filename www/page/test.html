@@ -1,0 +1,16 @@
+<ons-page ng-controller="Ctrl as cl">
+      <!-- test -->
+      さらにテスト
+      テスト
+      <form name="demoForm2" novalidate>
+        <ons-input modifier="material" type="number" name="input5" ng-model="demoModel5" ng-required="true"></ons-input>
+        <p>エラーパターン : {{ demoForm2.input5.$error }}</p>
+      </form>
+
+      <form name="demoForm1" novalidate>
+        <input type="number" name="input6" ng-model="demoModel6" ng-required="true" ng-minlength="4">
+        <p>エラーパターン : {{ demoForm1.input6.$error }}</p>
+      </form>
+      <!-- test -->
+    </div>
+  </ons-page>

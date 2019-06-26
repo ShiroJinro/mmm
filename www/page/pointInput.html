@@ -1,0 +1,36 @@
+<ons-page ng-controller="InputCtrl as inputCl">
+    <ons-toolbar>
+      <div class="left" ng-click="inputCl.back()">
+        <ons-toolbar-button>
+          <ons-icon icon="ion-close-round" fixed-width="false" style="font-size: 26px; vertical-align: -4px"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">点棒入力</div>
+    </ons-toolbar>
+
+    <div class="content" style="margin: 10px;">
+
+      <ons-select ng-model="inputCl.select1" id="player1">
+        <option ng-repeat="player in inputCl.players" value="{{ player }}" 
+        ng-selected="{{inputCl.select1 == player}}">{{ player }}</option>
+      </ons-select>
+      <ons-input modifier="material" type="number" ng-model="inputCl.point1" float></ons-input> 00<br><br>
+      <ons-select ng-model="inputCl.select2" id="player2">
+        <option ng-repeat="player in inputCl.players" value="{{ player }}"
+        ng-selected="{{inputCl.select2 == player}}">{{ player }}</option>
+      </ons-select>
+      <ons-input modifier="material" type="number" ng-model="inputCl.point2" float></ons-input> 00<br><br>
+      <ons-select ng-model="inputCl.select3" id="player3">
+        <option ng-repeat="player in inputCl.players" value="{{ player }}"
+        ng-selected="{{inputCl.select3 == player}}">{{ player }}</option>
+      </ons-select>
+      <ons-input modifier="material" type="number" ng-model="inputCl.point3" float></ons-input> 00<br><br>
+      <ons-select ng-model="inputCl.select4" id="player4">
+        <option ng-repeat="player in inputCl.players" value="{{ player }}"
+        ng-selected="{{inputCl.select4 == player}}">{{ player }}</option>
+      </ons-select>
+      <ons-input modifier="material" type="number" ng-model="inputCl.point4" float></ons-input> 00<br><br>
+      <ons-button ng-click="inputCl.inputFinish()">入力完了</ons-button>
+      <ons-button ng-click="inputCl.playerSetting()">プレイヤー設定</ons-button>
+    </div>
+  </ons-page>

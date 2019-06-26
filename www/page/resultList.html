@@ -1,0 +1,20 @@
+<ons-page ng-controller="ResultCtrl as resultCl">
+  <ons-toolbar>
+    <div class="center">集計表</div>
+  </ons-toolbar>
+
+  <div class="content" style="margin: 10px;">
+    <div class="settingStatus">
+      持ち点： {{resultCl.firstPt}}00点<br>
+      返し点： {{resultCl.returnPt}}00点<br>
+      順位ウマ：{{resultCl.umaPtList[0]}}ー{{resultCl.umaPtList[1]}}ー{{resultCl.umaPtList[2]}}ー{{resultCl.umaPtList[3]}}
+    </div>
+    <br>
+    <ons-row ng-repeat='testItems in resultCl.testList track by $index'>
+      <ons-col ng-repeat='testItem in testItems track by $index'>{{testItem}}</ons-col>
+    </ons-row>
+    <br>
+    <ons-button ng-click="resultCl.pointInput()">点棒入力</ons-button>
+    <ons-button ng-click="resultCl.playerSetting()">プレイヤー設定</ons-button>
+  </div>
+</ons-page>

@@ -1,0 +1,16 @@
+<ons-page ng-controller="PlayerDetailCtrl as plDetailCl">
+    <ons-toolbar>
+      <div class="left" ng-click="plDetailCl.back()">
+        <ons-toolbar-button>
+          <ons-icon icon="ion-close-round" fixed-width="false" style="font-size: 26px; vertical-align: -4px"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">プレイヤー設定詳細入力</div>
+    </ons-toolbar>
+
+    <div class="content" style="margin: 10px;">
+      現在のプレイヤー名 ：{{plDetailCl.playerData.name}}<br><br>
+      変更後のプレイヤー名 <ons-input modifier="material" type="text" ng-model="plDetailCl.newName" float></ons-input>
+      <ons-button ng-click="plDetailCl.changeNameComplete(plDetailCl.playerData.index)">名前変更完了</ons-button>
+    </div>
+</ons-page>
