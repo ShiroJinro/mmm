@@ -43,8 +43,16 @@ onsModule.controller('InputCtrl', function(MjPointService,ShareDataService) {
           handPtList.push(this.point3);
           handPtList.push(this.point4);
           var resultList = MjPointService.getMjPoint(handPtList,umaPtList,returnPt);//持ち点からPtを計算
-          ShareDataService.createPointList(resultList,selectPlList);
-          mainNavigator.pushPage('page/resultList.html');
+          if (resultList == null) {
+            //nullの場合は同点あり
+            ons.notification.alert({
+              message: '同点のプレイヤーがいます',
+              title: 'エラーだよ'
+            });
+          } else {
+            ShareDataService.createPointList(resultList,selectPlList);//保存データに結果表示用のPtリストを保存する
+            mainNavigator.pushPage('page/resultList.html');
+          }
         }
       } else {
         ons.notification.alert({

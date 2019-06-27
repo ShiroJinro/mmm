@@ -21,7 +21,6 @@ onsModule.factory('ShareDataService', function() {
         thisGamePointList[selectPlayerList[i]] = resultList[i];//順番にキー：プレイヤー名、値：ポイントを格納
       }
       pointList.push(thisGamePointList);
-      console.log(pointList);
     },
 
     //プレイヤー名を更新し、結果コードを返す(0:Success, -1:Fail)
