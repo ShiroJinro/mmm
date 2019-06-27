@@ -11,7 +11,7 @@
     </div>
     <br>
     <ons-row ng-repeat='testItems in resultCl.testList track by $index'>
-      <ons-col ng-repeat='testItem in testItems track by $index'>{{testItem}}</ons-col>
+      <ons-col class="border" ng-repeat='testItem in testItems track by $index'>{{testItem}}</ons-col>
     </ons-row>
     <br>
     <ons-button ng-click="resultCl.pointInput()">点棒入力</ons-button>

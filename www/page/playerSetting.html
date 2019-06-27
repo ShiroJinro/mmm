@@ -4,10 +4,13 @@
     </ons-toolbar>
 
     <div class="content" style="margin: 10px;">
-      <div ng-repeat="player in playerCl.players">
-        {{$index + 1}} : {{player}} <ons-button ng-click="playerCl.changeName(player,$index)">名前変更</ons-button>
-        <br>
-      </div>
+      <ons-row ng-repeat="player in playerCl.players">
+        <ons-col width="10%">{{$index + 1}}: </ons-col>
+        <ons-col width="50%">{{player}}</ons-col>
+        <ons-col>
+          <ons-button ng-click="playerCl.changeName(player,$index)">名前変更</ons-button>
+        </ons-col>
+      </ons-row>
       <ons-button ng-click="playerCl.backTop()">結果一覧画面へ</ons-button>
     </div>
 </ons-page>
