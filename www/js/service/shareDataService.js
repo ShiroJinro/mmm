@@ -3,6 +3,11 @@ onsModule.factory('ShareDataService', function() {
   var plList = ["プレイヤー1","プレイヤー2","プレイヤー3","プレイヤー4","プレイヤー5"];
   var pointList = [];
 
+  var firstPt = 300;
+  var returnPt = 400;
+  
+  var umaPtList = [25,15,-15,-25];
+
   return {
     //プレイヤー一覧を返す
     getPlList: function() {
@@ -13,6 +18,19 @@ onsModule.factory('ShareDataService', function() {
     getPtList: function() {
       return pointList;
     },
+
+    getFirstPt: function() {
+      return firstPt;
+    },
+
+    getUmaPtList: function() {
+      return umaPtList;
+    },
+    getReturnPt: function() {
+      return returnPt;
+    },
+
+   
     
     //点棒一覧とプレイヤー選択から得点リストを作成する
     createPointList: function(resultList,selectPlayerList) {
@@ -36,4 +54,7 @@ onsModule.factory('ShareDataService', function() {
       }
     }
   }
+
+
+
 })

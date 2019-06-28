@@ -4,10 +4,10 @@ var onsModule = ons.bootstrap(['onsen'])
 //点棒入力ページのコントローラー
 onsModule.controller('InputCtrl', function(MjPointService,ShareDataService) {
     //点棒の初期入力値設定
-    this.point1 = 250;
-    this.point2 = 250;
-    this.point3 = 250;
-    this.point4 = 250;
+    this.point1 = ShareDataService.getFirstPt();
+    this.point2 = ShareDataService.getFirstPt();
+    this.point3 = ShareDataService.getFirstPt();
+    this.point4 = ShareDataService.getFirstPt();
 
     var players = ShareDataService.getPlList();//プレイヤーリスト
     this.players = players;//
@@ -18,10 +18,10 @@ onsModule.controller('InputCtrl', function(MjPointService,ShareDataService) {
     this.select3 = players[2];
     this.select4 = players[4];
 
-    var firstPt = 250;//持ち点
-    var returnPt = 300;//返し点
+    var firstPt = ShareDataService.getFirstPt();//持ち点
+    var returnPt = ShareDataService.getReturnPt();//返し点
     var handPtList = [];//持ち点のリスト
-    var umaPtList = [30,10,-10,-30];
+    var umaPtList = ShareDataService.getUmaPtList();
     
     //点棒入力完了ボタン押下時
     this.inputFinish = function() {
@@ -74,17 +74,19 @@ onsModule.controller('topCtrl', function() {
   //集計画面のコントローラー
 onsModule.controller('ResultCtrl', function(ShowService,ShareDataService) {
 
-    var firstPt = 250;//持ち点
+    var first = 250;//持ち点
     var returnPt = 300;//返し点
     var umaPtList = [30,10,-10,-30];//ウマ
 
-    this.firstPt = firstPt;//Viewへバインド
-    this.returnPt = returnPt;//Viewへバインド
-    this.umaPtList = umaPtList;//Viewへバインド
+    this.firstPt =  ShareDataService.getFirstPt();//Viewへバインド
+    this.returnPt = ShareDataService.getReturnPt();//Viewへバインド
+    this.umaPtList = ShareDataService.getUmaPtList();//Viewへバインド
 
     //shareDataサービスから保持しているデータを取ってくる
     var plList = ShareDataService.getPlList();
     var pointList = ShareDataService.getPtList();
+    
+    
 
     this.testList = ShowService.getPointList(plList,pointList);//表示用データを作成し、Viewへバインド
 
