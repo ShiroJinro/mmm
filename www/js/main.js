@@ -97,6 +97,10 @@ onsModule.controller('ResultCtrl', function(ShowService,ShareDataService) {
     this.playerSetting = function() {
       mainNavigator.pushPage('page/playerSetting.html');//プレイヤー設定画面に遷移
     }
+    
+    this.setting = function() {
+      mainNavigator.pushPage('page/setting.html');//設定画面に遷移
+    }
   })
 
   //プレイヤー設定画面のコントローラー
@@ -146,6 +150,10 @@ onsModule.controller('ResultCtrl', function(ShowService,ShareDataService) {
     }
   })
 
+//設定画面のコントローラー
+onsModule.controller('SettingCtrl', function() {
+    //notting
+  })
   ;//コントローラーClose
 
   //アプリ起動時に初めに呼ばれる関数
